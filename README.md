@@ -51,5 +51,4 @@ New version of the Profil page with a new design and new features for the sport 
 
 
 ## Author information
-
 ### [Adrien SELMANE](https://github.com/ASelmane)
