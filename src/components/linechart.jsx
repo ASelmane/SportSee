@@ -1,5 +1,6 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import "../styles/css/charts.css";
+import PropType from "prop-types";
 
 /**
 * A average sessions line chart component.
@@ -25,7 +26,7 @@ const chartLine = (average) => {
                     <LineChart data={sessions}
                         margin={{ top: 50, right: 0, left: 5, bottom: 5 }}>
                         <XAxis padding={{ left: 20, right: 20 }} dataKey="day" axisLine={false} tickLine={false} stroke="#ffffff" />
-                        <YAxis hide domain={['dataMin - 10', 'dataMax + 5']} />
+                        <YAxis hide domain={['dataMin - 2', 'dataMax + 5']} />
                         <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: "none" }} />
                         <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" dot={false} />
                     </LineChart>
@@ -47,8 +48,8 @@ const chartLine = (average) => {
 
 /**
  * Custom tooltip for the chart.
- * @param {Boolean} {active
- * @param {Array} payload}
+ * @param {Boolean} active
+ * @param {Array} payload
  * @returns A custom tooltip React Element.
  */
 const CustomTooltip = ({ active, payload }) => {
@@ -61,5 +62,15 @@ const CustomTooltip = ({ active, payload }) => {
     }
     return null;
 };
+
+chartLine.propTypes = {
+    average: PropType.object,
+    sessions: PropType.array
+}
+
+CustomTooltip.propTypes = {
+    active: PropType.bool,
+    payload: PropType.array
+}
 
 export default chartLine;

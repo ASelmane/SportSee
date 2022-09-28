@@ -3,14 +3,15 @@ import Proteines from '../assets/icones/Proteines.svg';
 import Glucides from '../assets/icones/Glucides.svg';
 import Lipides from '../assets/icones/Lipides.svg';
 import "../styles/css/counter.css";
+import PropTypes from 'prop-types'
 
 /**
 * A counter component for calories, proteines, glucides and lipides.
-* @param {Object} data
+* @param {String} types
+* @param {Number} value
 * @returns A counter React Element.
 */
-const Counter = (data) => {
-    const { types, value } = data;
+const Counter = ({ types, value }) => {
     let icon = "";
     
     switch (types) {
@@ -38,6 +39,11 @@ const Counter = (data) => {
             </div>
         </div>
     );
+}
+
+Counter.propTypes = {
+    types: PropTypes.string,
+    value: PropTypes.number
 }
 
 export default Counter;

@@ -12,6 +12,7 @@ New version of the Profil page with a new design and new features for the sport 
 -   React v18.2.0
 -   React-router-dom v6.4.0
 -   Recharts v2.1.14
+-   Prop-types v15.8.1
 -   axios v0.27.2
 ## Installation and Usage
 
@@ -51,4 +52,4 @@ New version of the Profil page with a new design and new features for the sport 
 
 ## Author information
 
-### [Amine SELMANE](https://github.com/ASelmane)
+### [Adrien SELMANE](https://github.com/ASelmane)

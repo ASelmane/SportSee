@@ -1,4 +1,5 @@
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from "recharts";
+import PropTypes from 'prop-types'
 import "../styles/css/charts.css";
 
 /**
@@ -21,7 +22,7 @@ const chartRadar = (perf) => {
                     <RadarChart margin={{ top: 75}} cx="50%" cy="50%" outerRadius="80%" data={data}>
                         <PolarGrid radialLines={false} />
                         <PolarAngleAxis dataKey="kind" tickLine={false} stroke="#FFFFFF" dy={5} tick={{ fontSize: 12, fontWeight: 500 }} />
-                        <Radar dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                        <Radar dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.6} />
                     </RadarChart>
                 </ResponsiveContainer>
             </div>
@@ -35,6 +36,12 @@ const chartRadar = (perf) => {
             </div>
         )
     }
+}
+
+chartRadar.propTypes = {
+    perf: PropTypes.object,
+    data: PropTypes.object,
+    kind: PropTypes.array
 }
 
 export default chartRadar;

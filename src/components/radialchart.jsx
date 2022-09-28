@@ -1,17 +1,18 @@
 import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
+import PropTypes from 'prop-types'
 import "../styles/css/charts.css";
 
 /**
 * A radial chart component of user score.
-* @param {Object} data
+* @param {Number} data
 * @external Recharts library
 * @see https://recharts.org/en-US/api/RadialBarChart
 * @returns A radial chart React Element.
 */
-const chartRadial = (data) => {
+const chartRadial = ({data}) => {
     const dataRadial = [
         {
-            score: data.data
+            score: data
         }
     ];
     
@@ -39,6 +40,10 @@ const chartRadial = (data) => {
         </div>
 
     );
+}
+
+chartRadial.propTypes = {
+    data: PropTypes.number
 }
 
 export default chartRadial;

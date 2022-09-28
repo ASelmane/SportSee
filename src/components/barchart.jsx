@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import "../styles/css/barchart.css";
+import PropTypes from 'prop-types'
 
 
 /**
@@ -84,5 +85,15 @@ const CustomTooltip = ({ active, payload }) => {
     }
     return null;
 };
+
+ChartBar.propTypes = {
+    activity: PropTypes.object,
+    sessions: PropTypes.array
+}
+
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
+}
 
 export default ChartBar;

@@ -6,6 +6,7 @@ import ChartRadial from '../components/radialchart';
 import Counter from '../components/counter';
 import React from "react";
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import {
     dataUser,
     dataActivity,
@@ -19,17 +20,17 @@ import {
 */
 const Profil = () => {
     const { id } = useParams();
-    const [user, setUser] = React.useState([]);
-    const [activity, SetActivity] = React.useState([]);
-    const [perf, SetPerf] = React.useState([]);
-    const [average, setAverage] = React.useState([]);
+    const [user, setUser] = React.useState({});
+    const [activity, SetActivity] = React.useState({});
+    const [perf, SetPerf] = React.useState({});
+    const [average, setAverage] = React.useState({});
 
 
     /**
     * Store the data from the API in the state.
     * @param {Number} id
     */
-    const getFullDataFormat = async (id) => {
+    const getAllData = async (id) => {
         const responseUser = await dataUser(id);
         setUser(responseUser);
         const responseActivity = await dataActivity(id)
@@ -39,12 +40,13 @@ const Profil = () => {
         const responsePerformance = await dataPerf(id)
         SetPerf(responsePerformance)
     }
-
+    getAllData.propTypes = {
+        id: PropTypes.number
+    }
     
     React.useEffect(() => {
-        getFullDataFormat(id);
+        getAllData(id);
     }, [id])
-
 
     return (
         <section className='profil'>
@@ -68,6 +70,7 @@ const Profil = () => {
             </div>
         </section>
     );
+    
 }
 
 export default Profil;
