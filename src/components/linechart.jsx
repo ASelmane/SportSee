@@ -25,7 +25,7 @@ const chartLine = (average) => {
                     <LineChart data={sessions}
                         margin={{ top: 50, right: 0, left: 5, bottom: 5 }}>
                         <XAxis padding={{ left: 20, right: 20 }} dataKey="day" axisLine={false} tickLine={false} stroke="#ffffff" />
-                        <YAxis hide domain={['dataMin - 2', 'dataMax + 5']} />
+                        <YAxis hide domain={['dataMin - 10', 'dataMax + 5']} />
                         <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: "none" }} />
                         <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" dot={false} />
                     </LineChart>
