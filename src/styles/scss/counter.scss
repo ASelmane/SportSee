@@ -1,0 +1,31 @@
+.counter {
+    display: flex;
+    background-color: #FBFBFB;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 175px;
+    height: 124px;
+    padding: 0 32px;
+    gap: 25px;
+    border-radius: 5px;
+    .type {
+        width: 60px;
+        height: 60px;
+    }
+    .value {
+        width: 110px;
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #282D30;
+        margin: 0;
+    }
+    p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #74798C;
+        margin: 0;
+    }
+}

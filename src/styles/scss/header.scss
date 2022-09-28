@@ -1,0 +1,42 @@
+header {
+    background-color: #020203;
+    position: relative;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 500px;
+    color: white;
+    z-index: 10;
+    .App-logo {
+        width: 178px;
+        height: 60px;
+        margin: 0 30px;
+        pointer-events: none;
+    }
+    nav {
+        width: 100%;
+        margin: 0 90px 0 120px;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+li {
+    list-style: none;
+    margin: 0 10px;
+    a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            color: #FF0101;
+        }
+    }
+}

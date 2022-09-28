@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  margin-top: 75px;
+  gap: 30px;
+}
+.content .left-div {
+  display: flex;
+  width: 75%;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+.content .right-div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.content .small-chart {
+  display: flex;
+  justify-content: center;
+  gap: 20px 5%;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 50px;
+}/*# sourceMappingURL=Profil.css.map */

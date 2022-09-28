@@ -1,0 +1,56 @@
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #20253A;
+    }
+    .legend {
+        display: flex;
+        margin-right: 30px;
+        gap: 10%;
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .legend-color {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+            }
+            p {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 14px;
+                white-space: nowrap;
+                color: #74798C;
+            }
+        }
+    }
+}
+
+.gray {
+    background-color: #282D30;
+}
+
+.red {
+    background-color: #E60000;
+}
+
+.tooltip {
+    height: 85px;
+    width: 60px;
+    background-color: #E60000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        text-align: center;
+        font-size: 12px;
+        width: 100%;
+        color: #FFFFFF;
+    }
+}

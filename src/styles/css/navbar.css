@@ -1,0 +1,31 @@
+.navbar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  top: 0;
+  left: 0;
+  bottom: -10px;
+  background-color: #020203;
+  min-height: 1024px;
+  z-index: 0;
+  margin-bottom: 0;
+}
+.navbar .nav-l {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.navbar span {
+  position: absolute;
+  bottom: 120px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  justify-self: end;
+}/*# sourceMappingURL=navbar.css.map */
