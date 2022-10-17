@@ -12,10 +12,12 @@ import "../styles/css/charts.css";
 const chartRadar = (perf) => {
     let { data, kind } = perf.data;
 
-    if (data && data.length > 0) {
+    if (data[0].kind || data.length > 1) {
+        
         for (let i = 0; i < data.length; i++) {
-            data[i].kind = kind[i + 1];
+            data[i].kind = kind[i + 1].charAt(0).toUpperCase() + kind[i + 1].slice(1);
         }
+
         return (
             <div className="radar">
                 <ResponsiveContainer>

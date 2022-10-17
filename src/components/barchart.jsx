@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
 */
 const ChartBar = (activity) => {
     let { sessions } = activity.data;
-    if (sessions && sessions.length > 0) {
+    if (sessions[0].day !== "" || sessions.length > 1) {
         sessions.forEach(days => {
             days.day = days.day.slice(-2);
         });

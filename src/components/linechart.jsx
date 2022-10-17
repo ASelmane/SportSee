@@ -2,6 +2,7 @@ import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "rec
 import "../styles/css/charts.css";
 import PropType from "prop-types";
 
+
 /**
 * A average sessions line chart component.
 * @param {Object} average
@@ -12,18 +13,23 @@ import PropType from "prop-types";
 const chartLine = (average) => {
     let { sessions } = average.data;
     const day = ["L", "M", "M", "J", "V", "S", "D"];
-    if (sessions && sessions.length > 0) {
+    let data = [];
+    if (sessions[0].day !== "" || sessions.length > 1) {
+        
         for (let i = 0; i < sessions.length; i++) {
-            sessions[i].day = day[i];
+            data.push({
+                day: day[sessions[i].day - 1],
+                sessionLength: sessions[i].sessionLength
+            });
         }
-
+        
         return (
             <div className="line">
                 <div className='chart-header'>
                     <h2>Durée moyenne des sessions</h2>
                 </div>
                 <ResponsiveContainer width="100%">
-                    <LineChart data={sessions}
+                    <LineChart data={data}
                         margin={{ top: 50, right: 0, left: 5, bottom: 5 }}>
                         <XAxis padding={{ left: 20, right: 20 }} dataKey="day" axisLine={false} tickLine={false} stroke="#ffffff" />
                         <YAxis hide domain={['dataMin - 2', 'dataMax + 5']} />
