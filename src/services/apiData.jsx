@@ -1,4 +1,11 @@
 import axios from "axios";
+class User{
+    constructor(userInfos, score, keyData ) {
+        this.userInfos = userInfos
+        this.score = score
+        this.keyData = keyData
+    }
+}
 
 /**
  * Fetch user_data from API
@@ -24,10 +31,17 @@ export const dataUser = async (id) => {
                     lipidCount: res.keyData.lipidCount ? res.keyData.lipidCount : 0,
                 }
             }
+            
         })
         .catch((error) => console.log(error));
-    return data;
+    return new User(data.userInfos, data.score, data.keyData);
 };
+
+class Activity {
+    constructor (sessions) {
+        this.sessions = sessions
+    }
+}
 
 /**
  * Fetch user_activity from API
@@ -56,8 +70,14 @@ export const dataActivity = async (id) => {
                 { day: "", kilogram: 0, calories: 0 }
             ];
         });
-    return data;
+    return new Activity(data.sessions);
 };
+
+class Average {
+    constructor (sessions) {
+        this.sessions = sessions
+    }
+}
 
 /**
  * Fetch user_average_sessions from API
@@ -85,8 +105,15 @@ export const dataAverage = async (id) => {
                 { day: "", sessionLength: 0 }
             ];
         });
-    return data;
+    return new Average(data.sessions);
 };
+
+class Perf {
+    constructor (kind, data) {
+        this.kind = kind
+        this.data = data
+    }
+}
 
 /**
  * Fetch user_performance from API
@@ -115,5 +142,5 @@ export const dataPerf = async (id) => {
                 {value: 0, kind: 0}
             ];
         });
-    return data;
+    return new Perf(data.kind, data.data);
 };
